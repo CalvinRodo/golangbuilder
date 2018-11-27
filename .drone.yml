@@ -19,6 +19,6 @@ steps:
     repo: quay.io/calvinrodo/golangbuilder
     tags:
       - latest
-      - 0.0.1
+      - 0.0.2
     username: calvinrodo+go_lang_builder
 
