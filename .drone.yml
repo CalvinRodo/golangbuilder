@@ -10,12 +10,12 @@ steps:
 - name: build
   image: plugins/docker
   settings: 
+    registry: quay.io
     username:
       from_secret: QUAY_UNAME
     password:
       from_secret: QUAY_PWORD
-    repo: calvinrodo/golangbuilder 
-    registry: quay.io
+    repo: calvinrodo/golangbuilder
     tags:
       - latest
       - 0.0.1
