@@ -2,20 +2,25 @@
 kind: pipeline
 name: default
 
-platform: 
+platform:
   os: linux
   arch: amd64
 
 steps:
 - name: build
   image: plugins/docker
-  settings: 
+  settings:
     registry: quay.io
-    username:
-      from_secret: QUAY_UNAME
+    username: calvinrodo+go_lang_builder
     password:
-      from_secret: QUAY_PWORD
+      from_secret: quay_pword
     repo: calvinrodo/golangbuilder
     tags:
       - latest
       - 0.0.1
+
+---
+kind: secret
+
+data:
+  quay_pword: XLwPMqrRcBaSkHAG1p7FdNnkzz8u1VEJObnJsuqHSEoJPtKWxgF6FvZq4KwNSOYEm6uYvxL3aoD__rmXv1WlJVytO7inWoY9ztPIaYPDRMYjfiDbxoNc6e9rH2lFRvlwhmePDa58ag==
