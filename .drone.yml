@@ -8,6 +8,14 @@ platform:
 
 steps:
 - name: build
-  image: docker:dind
-  commands:
-    - docker build . -t golangbuilder:latest
+  image: plugins/docker
+  settings: 
+    username:
+      from_secret: QUAY_UNAME
+    password:
+      from_secret: QUAY_PWORD
+    repo: calvinrodo/golangbuilder 
+    registry: quay.io
+    tags:
+      - latest
+      - 0.0.1
